@@ -4,8 +4,9 @@
 std::vector<std::string> Split(std::string whole, std::string separator);
 
 // takes two strings and returns a new string that is the result of removing all occurrences of s2 from s1.
-std::string RemoveAllSubstrings(std::string s1, std::string s2);
-
+std::string RemoveAllSubstrings(std::string s1, std::string s2){
+    return s1.replace(s2,"");
+}
 // takes two strings and returns a new string that is the result of removing the first occurrence of s2 from s1.
 std::string RemoveFirstSubstring(std::string s1, std::string s2);
 
@@ -18,8 +19,13 @@ std::vector<int> MatchVectors(std::vector<int> a, std::vector<int> b);
 
 // divides an input integer by 2 until it is impossible to do so, then returns the final number.
 // (16 = 2 * 2 * 2 * 2 * 1 -> 1, 7 -> 7, 26 = 2 * 13 -> 13, 52 = 2 * 2 * 13 -> 13)
-int RemoveTwos(int original);
-
+int RemoveTwos(int original){
+    if(original%2 == 0){
+        RemoveTwos(original/2)
+    }else{
+        return original
+    }        
+}
 // takes a vector of integers and removes all elements evenly divisible by the passed in int
 std::vector<int> MultiplesFilter(std::vector<int>, int divides_by);
 
