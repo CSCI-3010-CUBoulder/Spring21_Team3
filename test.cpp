@@ -1,8 +1,8 @@
 #define CATCH_CONFIG_MAIN
-#include "cathc.hpp"
+#include "catch.hpp"
 #include "functions_to_implement.cpp"
 #include <vector>
-#include <iostream>
+#include <random>
 
 TEST_CASE("Factorials are computed","[factorial]"){
     REQUIRE( Factorial(0) == 1);
@@ -17,7 +17,7 @@ TEST_CASE("incrementing values in integer vector" , "[addN]"){
     SECTION("checking with +ve n"){
         int n=5;
         std::vector<int> res = AddN(v,n);
-        srant(time(NULL));
+        srand(time(NULL));
         int random = rand()%v.size();
         REQUIRE(v.size() == res.size());
         REQUIRE( res[0] == 6);
@@ -27,7 +27,7 @@ TEST_CASE("incrementing values in integer vector" , "[addN]"){
     SECTION("checking with -ve n"){
         int n=-5;
         std::vector<int> res = AddN(v,n);
-        srant(time(NULL));
+        srand(time(NULL));
         int random = rand()%v.size();
         REQUIRE(v.size() == res.size());
         REQUIRE( res[0] == -4);

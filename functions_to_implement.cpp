@@ -1,12 +1,14 @@
 /* String functions section */
+#include <vector>
+#include <string>
 
 // Splits a single string on separator into a vector of strings
 std::vector<std::string> Split(std::string whole, std::string separator);
 
 // takes two strings and returns a new string that is the result of removing all occurrences of s2 from s1.
-std::string RemoveAllSubstrings(std::string s1, std::string s2){
-    return s1.replace(s2,"");
-}
+std::string RemoveAllSubstrings(std::string s1, std::string s2);//{
+    //return s1.replace(s2,"");
+//}
 // takes two strings and returns a new string that is the result of removing the first occurrence of s2 from s1.
 std::string RemoveFirstSubstring(std::string s1, std::string s2);
 
@@ -24,7 +26,8 @@ int RemoveTwos(int original){
         RemoveTwos(original/2);
     }else{
         return original;
-    }        
+    }     
+    return original;   
 }
 // takes a vector of integers and removes all elements evenly divisible by the passed in int
 std::vector<int> MultiplesFilter(std::vector<int>, int divides_by);
@@ -109,7 +112,7 @@ double Sign(double num);
 std::vector<int> AddN(std::vector<int>, int n);
 
 // adds n to each element of the vector
-std::vector<int> AddN(std::vector<int>, int n){
+std::vector<int> AddN(std::vector<int> v, int n){
     for(int i=0; i<(int)v.size(); i++){
         v[i] += n;
     }
