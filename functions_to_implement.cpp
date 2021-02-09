@@ -108,7 +108,13 @@ std::vector<int> AddN(std::vector<int>, int n){
 }    
 
 // adds n to each element of the vector
-std::vector<double> AddN(std::vector<double>, double n);
+std::vector<double> AddN(std::vector<double> d, double n) {
+    std::vector<double> sum;
+    for(double val : d) {
+        sum.push_back(val+n);
+    }
+    return sum;
+}
 
 // adds n to each element of the vector
 std::vector<std::string> AddN(std::vector<std::string>, std::string n);
