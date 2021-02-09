@@ -21,9 +21,9 @@ std::vector<int> MatchVectors(std::vector<int> a, std::vector<int> b);
 // (16 = 2 * 2 * 2 * 2 * 1 -> 1, 7 -> 7, 26 = 2 * 13 -> 13, 52 = 2 * 2 * 13 -> 13)
 int RemoveTwos(int original){
     if(original%2 == 0){
-        RemoveTwos(original/2)
+        RemoveTwos(original/2);
     }else{
-        return original
+        return original;
     }        
 }
 // takes a vector of integers and removes all elements evenly divisible by the passed in int

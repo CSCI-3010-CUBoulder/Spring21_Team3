@@ -2,6 +2,7 @@
 #include "cathc.hpp"
 #include "functions_to_implement.cpp"
 #include <vector>
+#include <iostream>
 
 TEST_CASE("Factorials are computed","[factorial]"){
     REQUIRE( Factorial(0) == 1);
