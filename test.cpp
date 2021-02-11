@@ -2,6 +2,7 @@
 #include "catch.hpp"
 #include "functions_to_implement.cpp"
 #include <vector>
+#include <random>
 
 TEST_CASE("Factorials are computed","[factorial]"){
     REQUIRE( Factorial(0) == 1);
@@ -50,4 +51,5 @@ TEST_CASE("Incrementing valeus in double vector", "[addDouble]") {
         REQUIRE(v.size() == res.size());
         REQUIRE( res[0] == -3.8); 
     }
+
 }
