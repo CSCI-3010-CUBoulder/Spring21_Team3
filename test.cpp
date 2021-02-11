@@ -2,7 +2,6 @@
 #include "catch.hpp"
 #include "functions_to_implement.cpp"
 #include <vector>
-
 #include <random>
 
 TEST_CASE("Factorials are computed","[factorial]"){
@@ -35,4 +34,22 @@ TEST_CASE("incrementing values in integer vector" , "[addN]"){
         REQUIRE( res[v.size()-1] == 5);
         REQUIRE( res[random] == v[random]+n);
     }    
+}
+
+TEST_CASE("Incrementing valeus in double vector", "[addDouble]") {
+    std::vector<double> v{1.2, 3.1, 4.5, 8.9, 3, 6.2, 7.2, 8.6, 3.2, 10.0};
+
+    SECTION("Checking with positive n") {
+        double n = 5.0;
+        std::vector<double> res = AddN(v, n);
+        REQUIRE(v.size() == res.size());
+        REQUIRE( res[0] == 6.2);
+    }
+    SECTION("Checking with negative n") {
+        double n = -5.0;
+        std::vector<double> res = AddN(v, n);
+        REQUIRE(v.size() == res.size());
+        REQUIRE( res[0] == -3.8); 
+    }
+
 }

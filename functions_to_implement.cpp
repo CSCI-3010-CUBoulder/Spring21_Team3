@@ -2,6 +2,8 @@
 
 /* String functions section */
 #include <vector>
+
+#include <iostream>
 #include <string>
 
 // Splits a single string on separator into a vector of strings
@@ -109,6 +111,7 @@ std::vector<double> Multiples(double n, double m);
 // returns -1 if the number is negative and 1 if positive
 double Sign(double num);
 
+
 // adds n to each element of the vector
 std::vector<int> AddN(std::vector<int> v, int n){
     for(int i=0; i<(int)v.size(); i++){
@@ -116,6 +119,15 @@ std::vector<int> AddN(std::vector<int> v, int n){
     }
     return v;    
 }    
+
+// adds n to each element of the vector
+std::vector<double> AddN(std::vector<double> d, double n) {
+    std::vector<double> sum;
+    for(double val : d) {
+        sum.push_back(val+n);
+    }
+    return sum;
+}
 
 // adds n to each element of the vector
 std::vector<std::string> AddN(std::vector<std::string>, std::string n);

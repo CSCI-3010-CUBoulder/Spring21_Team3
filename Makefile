@@ -6,7 +6,7 @@ CXXGDB = -ggdb
 all: test
 
 clean:
-	rm test # functions_to_implement.o (because you can't recompile this one!)
+	rm test 
 
-test: functions_to_implement.o test.cpp
+test: test.cpp
 	$(CXX) $(CXXFLAGS) test.cpp -o test
