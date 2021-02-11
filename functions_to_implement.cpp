@@ -1,3 +1,5 @@
+#include <vector>
+
 /* String functions section */
 #include <vector>
 #include <string>
