@@ -1,14 +1,16 @@
 #include <vector>
 
 /* String functions section */
+#include <vector>
+#include <string>
 
 // Splits a single string on separator into a vector of strings
 std::vector<std::string> Split(std::string whole, std::string separator);
 
 // takes two strings and returns a new string that is the result of removing all occurrences of s2 from s1.
-std::string RemoveAllSubstrings(std::string s1, std::string s2){
-    return s1.replace(s2,"");
-}
+std::string RemoveAllSubstrings(std::string s1, std::string s2);//{
+    //return s1.replace(s2,"");
+//}
 // takes two strings and returns a new string that is the result of removing the first occurrence of s2 from s1.
 std::string RemoveFirstSubstring(std::string s1, std::string s2);
 
@@ -23,10 +25,11 @@ std::vector<int> MatchVectors(std::vector<int> a, std::vector<int> b);
 // (16 = 2 * 2 * 2 * 2 * 1 -> 1, 7 -> 7, 26 = 2 * 13 -> 13, 52 = 2 * 2 * 13 -> 13)
 int RemoveTwos(int original){
     if(original%2 == 0){
-        RemoveTwos(original/2)
+        RemoveTwos(original/2);
     }else{
-        return original
-    }        
+        return original;
+    }     
+    return original;   
 }
 // takes a vector of integers and removes all elements evenly divisible by the passed in int
 std::vector<int> MultiplesFilter(std::vector<int>, int divides_by);
@@ -60,7 +63,10 @@ std::vector<int> SquaresUntil(int n);
 int NthFibonacci(int n);
 
 // takes an int, n, and returns the factorial of that int (n!)
-int Factorial(int n);
+int Factorial(int n){
+    if((n==0)||(n==1)){ return 1; }
+    else { return n*Factorial(n-1); }
+}
 
 // returns -1 if the number is negative and 1 if positive
 int Sign(int num);
@@ -103,12 +109,13 @@ std::vector<double> Multiples(double n, double m);
 // returns -1 if the number is negative and 1 if positive
 double Sign(double num);
 
-
 // adds n to each element of the vector
-std::vector<int> AddN(std::vector<int>, int n);
-
-// adds n to each element of the vector
-std::vector<double> AddN(std::vector<double>, double n);
+std::vector<int> AddN(std::vector<int> v, int n){
+    for(int i=0; i<(int)v.size(); i++){
+        v[i] += n;
+    }
+    return v;    
+}    
 
 // adds n to each element of the vector
 std::vector<std::string> AddN(std::vector<std::string>, std::string n);
