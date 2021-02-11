@@ -9,10 +9,4 @@ clean:
 	rm test # functions_to_implement.o (because you can't recompile this one!)
 
 test: functions_to_implement.o test.cpp
-	$(CXX) $(CXXFLAGS) test.cpp functions_to_implement.o -o test
-
-cov: functions_to_implement.o test.cpp
-	$(CXX) $(CXXFLAGS) $(CXXTESTFLAGS) test.cpp functions_to_implement.o -o test
-
-functions_to_implement.o: functions_to_implement.cpp
-	$(CXX) $(CXXFLAGS) -c functions_to_implement.cpp
+	$(CXX) $(CXXFLAGS) test.cpp -o test
